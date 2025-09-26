@@ -1,0 +1,2 @@
+const livre= { titre:"la chevre de monsieur seguin",auteur:"khalil",annee:"2003",getInfo:function(){return `titre :${this.titre}\n auteur :${this.auteur}\n annee :${this.annee}\n `}}
+console.log(livre.getInfo());

@@ -1,0 +1,132 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(45, 74, 95);
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .container {
+    background-color: lightgoldenrodyellow;
+    width: 60%;
+    max-width: 800px;
+    border-radius: 25px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgb(45, 74, 95);
+    box-sizing: border-box;
+  }
+  
+  h1 {
+    margin: 0 0 12px 0;
+    font-size: 32px;
+  }
+  
+  .inputsection{
+    display:flex;
+    gap:8px;
+    width: 90%;
+    background-color: aliceblue;
+    border-radius: 10px;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+  }
+  
+  #tache {
+    flex: 1;
+    height: 36px;
+    border-radius: 8px;
+    border: none;
+    padding: 6px 8px;
+    font-size: 16px;
+    background: transparent;
+    outline: none;
+  }
+  
+  #ajouter {
+    height: 40px;
+    min-width: 100px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(64,72,221);
+    color: #ededed;
+    font-size: 14px;
+  }
+  
+  #ajouter:hover { background-color: rgb(81,160,230); }
+  
+  .container ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 90%;
+    max-height: 350px;          
+    overflow-y: auto;
+    border-radius: 10px;
+    background-color: skyblue;
+    box-sizing: border-box;
+  }
+  
+  .container ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 12px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    font-size: 16px;
+  }
+  
+  .container ul li:hover {
+    background-color: rgb(186,205,80);
+  }
+  
+  .container ul li .text {
+    flex: 1;
+    text-align: left;
+    margin-right: 12px;
+    word-break: break-word;
+  }
+  
+  .checked .text {
+    text-decoration: line-through;
+    color: gray;
+  }
+  
+  .action-buttons {
+    display:flex;
+    gap:8px;
+  }
+  
+  .action-buttons button {
+    border: none;
+    padding: 6px 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    background: rgba(0,0,0,0.05);
+  }
+  
+  .controls{
+    width: 90%;
+    margin-top: 12px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(45,74,95);
+  }
+  #clearAll{
+    background-color: rgb(220,80,80);
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  

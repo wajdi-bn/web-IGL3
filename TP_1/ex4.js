@@ -1,0 +1,16 @@
+a=[1,2,3]
+b=[4,5,6]
+//console.log(a.concat(b))
+console.log([...a,...b]);
+c=a
+c[0]=8
+console.log(c)
+console.log(a)
+d=a.slice(0)
+d[0]=9
+console.log(d)
+console.log(a)
+e=[...a]
+e[0]=0
+console.log(e)
+console.log(a)
