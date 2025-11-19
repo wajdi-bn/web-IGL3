@@ -1,0 +1,10 @@
+"use strict";
+module.exports = {
+    add: function (a, b) {
+        return a + b;
+    },
+    subtract: function (a, b) {
+        return a - b;
+    }
+};
+//# sourceMappingURL=index.js.map
