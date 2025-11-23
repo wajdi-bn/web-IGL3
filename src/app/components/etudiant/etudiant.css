@@ -1,0 +1,55 @@
+/* Container général */
+:host {
+    display: block;
+    margin-top: 1.5rem;
+  }
+  
+  /* Section détails */
+  h2 {
+    margin-bottom: 0.5rem;
+  }
+  
+  label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+  }
+  
+  input {
+    padding: 6px 10px;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  /* Tableau */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+  }
+  
+  th {
+    background: #f0f0f0;
+    padding: 8px;
+    text-align: left;
+    font-weight: bold;
+    border-bottom: 2px solid #ccc;
+  }
+  
+  td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Survol des lignes */
+  tbody tr:hover {
+    background: #f9f9f9;
+  }
+  
+  /* Alignement */
+  strong {
+    color: #444;
+  }
+  
