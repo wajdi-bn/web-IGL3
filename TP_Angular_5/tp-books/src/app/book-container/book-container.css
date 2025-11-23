@@ -1,0 +1,83 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 32px 24px;
+  gap: 32px;
+  flex-direction: row-reverse;
+}
+
+/* Formulaire à gauche (visuellement) */
+.form-section {
+  flex: 0 0 380px;
+  min-width: 320px;
+}
+
+/* Table à droite (visuellement) */
+.table-section {
+  flex: 1;
+  min-width: 0;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  overflow-x: auto;
+}
+
+/* Rendre le formulaire sticky avec une meilleure présentation */
+.form-section {
+  position: sticky;
+  top: 24px;
+  align-self: flex-start;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08),
+              0 1px 4px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.2s ease;
+}
+
+.form-section:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12),
+              0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px 16px;
+  }
+  
+  .form-section {
+    flex: 1;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .form-section app-book-form {
+    position: static;
+    top: auto;
+  }
+  
+  .table-section {
+    flex: 1;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 16px;
+    gap: 16px;
+  }
+  
+  .form-section app-book-form,
+  .table-section {
+    padding: 16px;
+    border-radius: 8px;
+  }
+}

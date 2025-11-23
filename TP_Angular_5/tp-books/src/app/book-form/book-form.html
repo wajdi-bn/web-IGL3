@@ -1,0 +1,74 @@
+<form #bookForm="ngForm" (ngSubmit)="onSubmit(bookForm)" class="book-form">
+
+  <h2 class="form-title">{{buttonlabel}}</h2>
+
+  <div>
+    <label for="title">Title :</label>
+    <input type="text" id="title" name="title" [(ngModel)]="newBook.title" required minlength="3" #title="ngModel" [class.invalid]="title.invalid && title.dirty" [class.valid]="title.valid">
+    <div *ngIf="title.invalid && title.dirty" class="error-msg">
+      <div *ngIf="title.errors?.['required']">Title is required.</div>
+      <div *ngIf="title.errors?.['minlength']">Title must be at least 3 characters.</div>
+    </div> 
+  </div>
+
+  <div>
+    <label for="author">Author :</label>
+    <input type="text" id="author" name="author" [(ngModel)]="newBook.author" required minlength="3" #author="ngModel" [class.invalid]="author.invalid && author.dirty" [class.valid]="author.valid"> 
+    <div *ngIf="author.invalid && author.dirty" class="error-msg">
+      <div *ngIf="author.errors?.['required']">Author is required.</div>
+      <div *ngIf="author.errors?.['minlength']">Author must be at least 3 characters.</div>
+    </div>
+  </div>
+
+  <div>
+    <label for="publisherEmail">Email Éditeur</label>
+    <input type="email" id="publisherEmail" name="publisherEmail" [(ngModel)]="newBook.publisherEmail" required minlength="3" #email="ngModel" [class.invalid]="email.invalid && email.dirty" [class.valid]="email.valid">
+    <div *ngIf="email.invalid && email.dirty" class="error-msg">
+        <div *ngIf="email.errors?.['required']">Email is required.</div>
+        <div *ngIf="email.errors?.['email']">Invalid email format.</div>
+    </div>
+  </div>
+
+  <div>
+    <label for="publisherPhone">Publisher Phone</label>
+    <input type="number" id="publisherPhone" name="publisherPhone" [(ngModel)]="newBook.publisherPhone" required #phone="ngModel" pattern="^[0-9]{8}$" [class.invalid]="phone.invalid && phone.dirty" [class.valid]="phone.valid">
+    <div *ngIf="phone.invalid && phone.dirty && phone.value" class="error-msg">
+      <div *ngIf="phone.errors?.['pattern']">Phone must be 8 digits.</div>
+    </div>
+  </div>
+
+  <div>
+    <label for="releaseDate">Release Date</label>
+    <input type="date" id="releaseDate" name="releaseDate" [(ngModel)]="newBook.releaseDate" required #releaseDate="ngModel">
+    <div *ngIf="releaseDate.invalid && releaseDate.dirty" class="error-msg">
+      <div *ngIf="releaseDate.errors?.['required']">Release Date is required.</div>
+      <div *ngIf="!isReleaseDateValid()">Year must be after 1900.</div>
+    </div>
+  </div>
+
+  <div>
+    <label for="category">Category</label>
+    <select id="category" name="category" [(ngModel)]="newBook.category" required #category="ngModel">
+      <option *ngFor="let c of categories" [value]="c">{{ c }}</option>
+    </select>
+    <div *ngIf="category.invalid && category.dirty" class="error-msg">
+      <div *ngIf="category.errors?.['required']">Category is required.</div>
+    </div>  
+  </div>
+
+  <div>
+    <label for="isAvailable">Available</label>
+    <input type="checkbox" id="isAvailable" name="isAvailable" [(ngModel)]="newBook.isAvailable" #available="ngModel">
+  </div>
+
+  <div>
+    <label for="stock">Stock</label>
+    <input type="number" id="stock" name="stock" [(ngModel)]="newBook.stock" #stock="ngModel" min="0" [class.invalid]="stock.invalid && stock.dirty" [class.valid]="stock.valid">
+    <div *ngIf="stock.invalid && stock.dirty && stock.value" class="error-msg">
+      <div *ngIf="stock.errors?.['min']">Stock cannot be negative.</div>
+    </div>
+  </div>
+
+  <button type="submit">{{buttonlabel}}</button>
+
+</form>

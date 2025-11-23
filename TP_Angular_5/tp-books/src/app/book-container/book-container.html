@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="table-section">
+    <app-book-list [books]="books" (delete)="deleteBook($event)" (update)="updateBook($event)"></app-book-list>
+  </div>
+
+  <div class="form-section">
+    <app-book-form 
+      (bookAdded)="addBook($event)" 
+      [categories]="categories" 
+      [updatedBook]="updatedBook">
+    </app-book-form>
+  </div>
+</div>
+

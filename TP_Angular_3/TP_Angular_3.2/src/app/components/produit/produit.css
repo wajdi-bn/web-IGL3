@@ -1,0 +1,53 @@
+.en-stock {
+    border: 2px solid green;
+    background-color: #e0ffe0;
+    }
+    .hors-stock {
+    border: 2px solid red;
+    background-color: #ffe0e0;
+    }
+
+    div {
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 12px;
+        margin-bottom: 10px;
+      }
+      h3 {
+        margin: 0 0 8px 0;
+        color: #333;
+        font-size: 20px;
+      }
+      
+      p {
+        margin: 0 0 10px 0;
+        color: #555;
+      }
+      
+    
+      button {
+        padding: 8px 14px;
+        margin-right: 8px;
+        margin-bottom: 2 px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 14px;
+      }
+      
+
+      button:not([disabled]) {
+        background-color: #369;
+        color: white;
+      }
+      
+
+      button:not([disabled]):hover {
+        background-color: #2b5270;
+      }
+   
+      button[disabled] {
+        background-color: #ccc;
+        color: #666;
+        cursor: not-allowed;
+      }

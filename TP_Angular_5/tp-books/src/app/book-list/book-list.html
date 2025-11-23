@@ -1,0 +1,33 @@
+<div *ngIf="books.length<=0">
+    <h1>No Available books </h1>
+
+</div>
+<table border="1" cellpadding="8" *ngIf="books.length>0">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Category</th>
+      <th>Available</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    @for (book of books; track book.id) {
+      <tr>
+        <td>{{ book.title }}</td>
+        <td>{{ book.author }}</td>
+        <td>{{ book.category }}</td>
+        <td>
+          {{ book.isAvailable ? 'Yes' : 'No' }}
+        </td>
+        <td>
+          <button (click)="update.emit(book)">Edit</button>
+          <button (click)="delete.emit(book.id)">Delete</button>
+        </td>
+      </tr>
+    }
+  </tbody>
+</table>
+
